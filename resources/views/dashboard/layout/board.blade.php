@@ -18,16 +18,13 @@
 
   <body>
     @include('dashboard.inc.header')
-    @include('message')
+
     <div class="container-fluid">
       <div class="row">
          @include('dashboard.inc.sidebar')
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-         
-         @include('dashboard.inc.nav')
          @yield('content')
-         @include('dashboard.inc.canvas')
         </main>
       </div>
     </div>
@@ -44,9 +41,6 @@
     <script>
       feather.replace()
     </script>
-
-    <!-- Graphs -->
-        @include('dashboard.inc.graphs')
   </body>
-      @include('blog.inc.footer')
+      
 </html>

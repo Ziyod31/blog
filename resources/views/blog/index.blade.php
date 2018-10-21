@@ -8,21 +8,16 @@
             </h3>
             @if(count($posts))
             @foreach($posts as $post)
-
-            <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
-                
-                <p class="blog-post-meta"><span>{{$post->user->name}} </span> on {{$post->created_at->format('d-m-y H:i:s')}}</p>
-            
-            {!! $post->body !!}
-            </div>
+            @include('blog.post')
             @endforeach
             @else
             <h3>Nothing published yet...</h3>
             @endif
             <nav class="blog-pagination">
+<!--
                 <a class="btn btn-outline-primary" href="#">Older</a>
                 <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+-->
                 {{$posts->links()}}
             </nav>
         </div>

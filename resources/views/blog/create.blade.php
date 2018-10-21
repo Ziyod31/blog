@@ -4,7 +4,7 @@
     <h3 class="pb-3 mb-4 font-italic border-bottom">
         Add post
     </h3>
-    <form action="/posts" id="contact-from" method="POST">
+    <form action="/posts/store" id="contact-from" method="POST">
         <div class="controls">
             @csrf
             <div class="row">
