@@ -22,7 +22,8 @@ class CategoriesController extends Controller
     
     public function create()
     {
-        return view('dashboard.categories.create')->with('categories', $categories);
+
+        return view('dashboard.categories.create')->with(compact('categories'));
     }
     
     public function store(Request $request)
@@ -35,7 +36,7 @@ class CategoriesController extends Controller
         $category->name = $request->input('name');
         $category->save();
         
-        return redirect('/admin', 'Category Added');
+        return redirect('/categories/category')->with('success','Category Added');
     }
     
     public function destroy($id)
@@ -43,12 +44,25 @@ class CategoriesController extends Controller
         $category = Category::find($id);
         $category->delete();
         
-        return redirect('/admin')->with('success', 'Category deleted');
+        return redirect('/categories/category')->with('success', 'Category Deleted');
     }
     
     public function edit($id)
     {
         $category = Category::find($id);
         return view('dashboard.categories.edit')->with('category', $category);
+    }
+    
+    public function update(Request $request, $id)
+    {
+         $this->validate($request, [
+            'name' => 'required'
+        ]);
+        
+        $category = Category::find($id);
+        $category->name = $request->input('name');
+        $category->save();
+        
+        return redirect('/categories/category')->with('success', 'Category updated');
     }
 }

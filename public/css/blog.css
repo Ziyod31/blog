@@ -126,3 +126,33 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/*-----Custom Labels widget by www.bloggertrix.com----*/
+
+.logout a{
+    text-decoration: none !important;
+    color: #6c757d;
+}
+.logout a:hover{
+    color: black;
+}
+
+.tags a{outline: 1px rgba(255,255,255,0.4) solid;
+border: 1px rgba(0,0,0,0.3) solid;
+padding: 4px 10px 4px 20px;
+text-decoration: none;
+color:#000000;
+white-space: nowrap;
+font-family: Arial;
+font-size: 14px;
+font-weight: italic;
+position: relative !important;
+background: #f8f9fa !important;
+float: left;
+padding: 5px 3px;
+margin: 0 5px 5px 0;
+border-radius:4px 4px; -moz-border-radius:4px 4px 4px 4px; -khtml-border-radius:4px 4px 4px 4px; -webkit-border-radius:4px 4px 4px 4px; border-radius:4px 4px 4px 4px;
+}
+
+.tags a:hover{color: rgba(0,0,0,0.5);}
+.label-size{line-height:1.5;align:left;}

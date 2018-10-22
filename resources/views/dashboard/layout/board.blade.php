@@ -18,7 +18,7 @@
 
   <body>
     @include('dashboard.inc.header')
-
+    @include('message')
     <div class="container-fluid">
       <div class="row">
          @include('dashboard.inc.sidebar')

@@ -14,16 +14,12 @@
 
         </ol>
     </div>
-
-    <div class="p-3">
+<div class="tags">
+        <div class="p-3">
         <h4 class="font-italic">Tags</h4>
-        <ol class="list-unstyled">
-
         @foreach($tags as $tag)
-        <li><a href="/posts/tags/{{$tag}}">{{$tag}}</a></li>
+        <a href="/posts/tags/{{$tag}}">{{$tag}}</a>
         @endforeach
-
-       
-        </ol>
+    </div>    
     </div>
 </aside>

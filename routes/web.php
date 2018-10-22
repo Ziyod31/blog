@@ -25,10 +25,11 @@ Route::get('/posts/tags/{tag}', 'TagsController@index');
 //categories
 Route::get('/posts/categories/{category}', 'CategoriesController@index');
 Route::get('/categories/{id}', 'CategoriesController@show');
-Route::post('/categories/store', 'CategoriesController@store');
-Route::get('/categories/create', 'CategoriesController@create');
+Route::post('/categories/category/store', 'CategoriesController@store');
+Route::get('/categories/category/create', 'CategoriesController@create');
 Route::get('/categories/{id}/edit', 'CategoriesController@edit');
 Route::delete('/categories/{id}', 'CategoriesController@destroy');
+Route::put('/categories/category/{id}', 'CategoriesController@update');
 //Route::resource('categories', 'CategoriesController');
 
 //comments

@@ -20,10 +20,10 @@
             @endif
             @else
             <a class="nav-link">{{ Auth::user()->name }} <span class="caret"></span></a>
-            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <span class="logout"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
-            </a>
+            </a></span>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>

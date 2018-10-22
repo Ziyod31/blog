@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         
         view()->composer('dashboard.categories.list', function($view)
         {
-        $categories = Category::pluck('name');
+        $categories = Category::all();
         $view->with(compact('categories'));    
         });
     }
