@@ -8,9 +8,9 @@ use App\Category;
 
 class CategoriesController extends Controller
 {
-    public function index(Category $category)
+    public function index($category)
     {
-        $posts = $category->posts()->simplePaginate(3);
+        $posts = \App\Category::findOrFail($category)->posts()->simplePaginate(3);
         return view ('blog.index', compact('posts'));
     }
     
@@ -23,7 +23,7 @@ class CategoriesController extends Controller
     public function create()
     {
 
-        return view('dashboard.categories.create')->with(compact('categories'));
+        return view('dashboard.categories.create')->with('categories', $categories);
     }
     
     public function store(Request $request)
@@ -50,7 +50,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('dashboard.categories.edit')->with('category', $category);
+        return view('dashboard.categories.edit')->with('categories', $categories);
     }
     
     public function update(Request $request, $id)

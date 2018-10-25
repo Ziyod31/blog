@@ -15,8 +15,19 @@
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
-            </div>
 
+                <div class="col-md-4">
+                    <label for="title">Select Category *</label><br>
+                    <select name="category_id" id="category-icon">
+                        <option value="0">Category</option>
+                        @foreach($categories as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                
+                
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -26,6 +37,17 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="row" name="tags">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="name">Tags *</label>
+                        <input type="text" name="tags" class="form-control" id="name" placeholder="Add more tags with  , " value="{{old('name', $tag->name)}}">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="col-md-12">
                 <input type="submit" class="btn btn-success btn-send" value="Edit Post">
             </div>

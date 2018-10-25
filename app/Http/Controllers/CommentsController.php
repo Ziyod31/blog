@@ -22,4 +22,10 @@ class CommentsController extends Controller
 //        return back();
         return Redirect::to(URL::previous() . "#comments");
     }
+    
+    public function show($id)
+    {
+        $comments = Comment::find($id);
+        return view('dashboard.comments.list')->with('comments', $comments);
+    }
 }

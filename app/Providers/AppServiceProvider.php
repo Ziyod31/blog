@@ -6,6 +6,7 @@ use Carbor\Carbon;
 use App\Post;
 use App\Tag;
 use App\Category;
+use App\Comment;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,16 +25,34 @@ class AppServiceProvider extends ServiceProvider
             $view->with(compact('archives', 'tags'));
         });
         
+         view()->composer('dashboard.tags.list', function($view)
+        {
+        $tags = Tag::all();
+        $view->with(compact('tags'));    
+        });
+        
         view()->composer('blog.inc.nav', function($view)
         {
-        $categories = Category::pluck('name');
-        $view->with(compact('categories'));    
+        $categories = Category::all();
+        $view->with('categories', $categories);    
         });
         
         view()->composer('dashboard.categories.list', function($view)
         {
         $categories = Category::all();
         $view->with(compact('categories'));    
+        });
+        
+        view()->composer('dashboard.comments.list', function($view)
+        {
+        $comments = Comment::all();
+        $view->with(compact('comments'));    
+        });
+        
+        view()->composer('dashboard.posts.list', function($view)
+        {
+        $posts = Post::all();
+        $view->with('posts', $posts);    
         });
     }
 

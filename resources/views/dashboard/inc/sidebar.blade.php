@@ -8,13 +8,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/posts/list">
                     <span data-feather="file"></span>
                     Posts
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/comments/list">
                     <span data-feather="shopping-cart"></span>
                     Comments
                 </a>
@@ -26,15 +26,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/tags/list">
                     <span data-feather="bar-chart-2"></span>
                     Tags
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/emails/list">
                     <span data-feather="layers"></span>
-                    Integrations
+                    eMails
                 </a>
             </li>
         </ul>

@@ -19,11 +19,11 @@
             <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a>
             @endif
             @else
-            <a class="nav-link">{{ Auth::user()->name }} <span class="caret"></span></a>
-            <span class="logout"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <a class="nav-link" href="/admin">{{ Auth::user()->name }} <span class="caret"></span></a>
+            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
-            </a></span>
+            </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>

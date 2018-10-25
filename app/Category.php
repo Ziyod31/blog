@@ -9,11 +9,6 @@ class Category extends Model
 {
     public function posts()
     {
-        return $this->belongsToMany(\App\Post::class);
-    }
-    
-    public function getRouteKeyName()
-    {
-        return 'name';
+        return $this->hasMany(\App\Post::class);
     }
 }

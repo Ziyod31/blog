@@ -122,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center !important;
   background-color: #f9f9f9 !important;
   border-top: .05rem solid #e5e5e5 !important;
+  height: 150px !important;        
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
@@ -129,12 +130,43 @@ h1, h2, h3, h4, h5, h6 {
 
 /*-----Custom Labels widget by www.bloggertrix.com----*/
 
-.logout a{
+.blog-header a{
     text-decoration: none !important;
     color: #6c757d;
 }
-.logout a:hover{
+.blog-header a:hover{
     color: black;
+    font-weight: 600;
+}
+
+.blog-post-title a{
+    text-decoration: none !important;
+    color: #0056b3;
+}
+
+.blog-post-title a:hover{
+    color: #6c757d !important;
+}
+
+.nav-scroller a{
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 1.4rem;
+}
+
+.nav-scroller a:hover{
+    color: #000000 !important;
+}
+
+#category-icon
+{
+    display: block;
+    font-size: .9rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: .397rem .77rem;
+    background-clip: padding-box;
+    background-color: #fff;
 }
 
 .tags a{outline: 1px rgba(255,255,255,0.4) solid;

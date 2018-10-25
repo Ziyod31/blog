@@ -21,9 +21,15 @@ Route::delete('/posts/{id}', 'PostsController@destroy');
 
 //tags
 Route::get('/posts/tags/{tag}', 'TagsController@index');
+Route::get('/tags/create', 'TagsController@create');
+Route::get('/tags/{id}', 'TagsController@show');
+Route::get('/tags/{id}/edit', 'TagsController@edit');
+Route::post('/tags/store', 'TagsController@store');
+Route::put('/tags/{id}', 'TagsController@update');
+Route::delete('/tags/{id}', 'TagsController@destroy');
 
 //categories
-Route::get('/posts/categories/{category}', 'CategoriesController@index');
+Route::get('/posts/categories/{category_id}', 'CategoriesController@index');
 Route::get('/categories/{id}', 'CategoriesController@show');
 Route::post('/categories/category/store', 'CategoriesController@store');
 Route::get('/categories/category/create', 'CategoriesController@create');
@@ -34,6 +40,7 @@ Route::put('/categories/category/{id}', 'CategoriesController@update');
 
 //comments
 Route::post('/posts/{post}/comments', 'CommentsController@store');
+Route::get('/comments/{id}', 'CommentsController@show');
 
 Route::view('login', 'auth.signin');
 Route::view('register', 'auth.reg');

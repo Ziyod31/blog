@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use Carbor\Carbon;
+use App\Category;
+use App\Tag;
 
 class PostsController extends Controller
 {
@@ -12,7 +14,6 @@ class PostsController extends Controller
     {
         $posts = Post::latest()->filter(request(['month', 'year']))->simplePaginate(3);
         $archives = Post::archives();
-
         return view('blog.index')->with('posts', $posts);
     }
     
@@ -24,20 +25,23 @@ class PostsController extends Controller
     
     public function create()
     {
-        return view('blog.create');
+        $categories = Category::all();
+        return view('blog.create')->with('categories', $categories);
     }
     
     public function store(Request $request)
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
         ]);
         
         $post = new Post;
         $post->user_id = auth()->user()->id;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->category_id = $request->input('category_id');
+        $post_tag->tag_id = $request->input('tag_id');
         $post->save();
         
         return redirect('/')->with('success', 'Your post is added');
@@ -46,7 +50,8 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('blog.edit')->with('post', $post);
+        $categories = Category::all();
+        return view('blog.edit')->with(compact('post'))->with('categories', $categories);
     }
     
     public function update(Request $request, $id)
@@ -60,6 +65,8 @@ class PostsController extends Controller
         $post->user_id = auth()->user()->id;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->category_id = $request->input('category_id');
+        $post_tag->tag_id = $request->input('tag_id');
         $post->save();
         
         return redirect('/')->with('success', 'Your post is updated');

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <title>Blog</title>
     <!-- <link rel="icon" href="../../../../favicon.ico"> -->
-    <title>Blog Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
     <link href="/css/app.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -24,10 +25,13 @@
         @include('blog.inc.sidebar')
       </div><!-- /.row -->
     </main><!-- /.container -->
-   @include('blog.inc.footer')
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/js/app.js"></script>
   </body>
+    <footer class="blog-footer">
+     @include('blog.inc.footer')
+    </footer>
 </html>

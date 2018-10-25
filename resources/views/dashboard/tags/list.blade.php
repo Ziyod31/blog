@@ -2,35 +2,27 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-12"><br>
+        <div class="col-lg-8"><br>
 <div class="card">
    <div class="card-header">
-       
-       <h2>List of Categories
-       <span class="float-right"><a href="/categories/category/create" class="btn btn-success btn-sm">Add Category</a></span></h2>
+       <h2>List of Tags</h2>
    </div> 
    
       <div class="card-body">
-         
-          @if(count($categories))
-          
+          @if(count($tags))
           <table class="table table-borderless">
              <thead>
                  <tr>
-                     <th>id</th>
                      <th>Name</th>
-                     <th></th>
                      <th></th>
                  </tr>
              </thead>
               <tbody>
-                  @foreach($categories as $category)
+                  @foreach($tags as $tag)
                   <tr>
-                      <td>{{$category->id}}</td>
-                      <td>{{$category->name}}</td>
-                      <td><a class="float-right btn btn-outline-success btn-sm" href="/categories/{{$category->id}}/edit">Edit</a></td>
-                      <td>
-                          <form method="post" action="/categories/{{$category->id}}" onsubmit="return confirm('Are you sure?')">
+                      <td>{{$tag->name}}</td>
+                      <td class="tag-delete">
+                          <form method="post" action="/tags/{{$tag->id}}" onsubmit="return confirm('Are you sure?')">
                               @csrf {{method_field("DELETE")}}
                               <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
                           </form>
@@ -42,4 +34,5 @@
           @endif
     </div>
 </div>
+
 @endsection
