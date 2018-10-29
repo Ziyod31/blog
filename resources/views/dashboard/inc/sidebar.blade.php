@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/posts/list">
+                <a class="nav-link" href="/admin">
                     <span data-feather="file"></span>
                     Posts
                 </a>
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/emails/list">
+                <a class="nav-link" href="#video" rel="https://mover.uz/watch/6guZOr1m/" data-size="1280:720">
                     <span data-feather="layers"></span>
                     eMails
                 </a>

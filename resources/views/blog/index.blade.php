@@ -24,4 +24,5 @@
         @include('blog.inc.sidebar')
     </div>
 </main>
+
 @endsection

@@ -14,11 +14,6 @@ class TagsController extends Controller
         return view ('blog.index', compact('posts'));
     }
     
-    public function create()
-    {
-        return view('dashboard.tags.create')->with('tags', $tags);
-    }
-    
     public function show($id)
     {
         $tag = Tag::find($id);
@@ -33,25 +28,17 @@ class TagsController extends Controller
         return redirect('/tags/list')->with('success', 'Tag was Deleted');
     }
     
-//    public function store(Request $request)
+//    public function store(Post $post)
 //    {
-//        $this->validate($request, [
-//            'name' => 'required'
-//        ]);
-//        
-//        $tag = new Tag;
-//        $tag->name = $request->input('name');
-//        $tag->save();
-//        
-//        return redirect('/tags/list')->with('success', 'Tag was Added');
+//        $post->addTags(request('name'));
 //    }
-    
-    public function edit($id)
-    {
-        $tag = Tag::find($id);
-        return view('blog.edit', compact('tag'));
-    }
-    
+//    
+//    public function edit($id)
+//    {
+//        $tag = Tag::find($id);
+//        return view('blog.edit', compact('tag'));
+//    }
+//    
 //    public function update(Request $request, $id)
 //    {
 //         $this->validate($request, [

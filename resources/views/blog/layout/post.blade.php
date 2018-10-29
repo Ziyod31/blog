@@ -31,7 +31,4 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/js/app.js"></script>
   </body>
-    <footer class="blog-footer">
-     @include('blog.inc.footer')
-    </footer>
 </html>

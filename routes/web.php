@@ -21,10 +21,9 @@ Route::delete('/posts/{id}', 'PostsController@destroy');
 
 //tags
 Route::get('/posts/tags/{tag}', 'TagsController@index');
-Route::get('/tags/create', 'TagsController@create');
 Route::get('/tags/{id}', 'TagsController@show');
-Route::get('/tags/{id}/edit', 'TagsController@edit');
 Route::post('/tags/store', 'TagsController@store');
+Route::get('/tags/{id}/edit', 'TagsController@edit');
 Route::put('/tags/{id}', 'TagsController@update');
 Route::delete('/tags/{id}', 'TagsController@destroy');
 
@@ -50,5 +49,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->middleware('auth')->group(function() {
-    Route::view('/', 'dashboard.index');
+    Route::get('/', 'PostsController@index');
 });

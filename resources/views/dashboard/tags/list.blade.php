@@ -1,8 +1,8 @@
-@extends('dashboard.layout.board')
+@extends('dashboard.layout.main')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-8"><br>
+        <div class="col-lg-12"><br>
 <div class="card">
    <div class="card-header">
        <h2>List of Tags</h2>

@@ -1,4 +1,4 @@
-@extends('dashboard.layout.board')
+@extends('dashboard.layout.main')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

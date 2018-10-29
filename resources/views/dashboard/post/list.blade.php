@@ -1,11 +1,12 @@
-@extends('dashboard.layout.board')
+@extends('dashboard.layout.main')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12"><br>
 <div class="card">
    <div class="card-header">
-       <h2>List of Posts</h2>
+       <h2>List of Posts
+        <span class="float-right"><a href="/posts/create" class="btn btn-success btn-sm">Add Posts</a></span></h2>
    </div> 
    
       <div class="card-body">
@@ -25,7 +26,7 @@
                   @foreach($posts as $post)
                   <tr>
                       <td></td>
-                      <td><a href="/posts/{$post->id}">{{$post->title}}</a></td>
+                      <td><a href="/posts/{{$post->id}}">{{$post->title}}</a></td>
                       <td><a class="float-right btn btn-outline-success btn-sm" href="/posts/{{$post->id}}/edit">Edit</a></td>
                       <td>
                           <form method="post" action="/posts/{{$post->id}}" onsubmit="return confirm('Are you sure?')">

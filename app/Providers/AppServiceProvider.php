@@ -48,12 +48,6 @@ class AppServiceProvider extends ServiceProvider
         $comments = Comment::all();
         $view->with(compact('comments'));    
         });
-        
-        view()->composer('dashboard.posts.list', function($view)
-        {
-        $posts = Post::all();
-        $view->with('posts', $posts);    
-        });
     }
 
     /**

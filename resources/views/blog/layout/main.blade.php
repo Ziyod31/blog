@@ -45,7 +45,5 @@
         });
     </script>
 </body>
-    <footer class="blog-footer">
      @include('blog.inc.footer')
-    </footer>
 </html>

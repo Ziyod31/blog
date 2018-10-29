@@ -11,6 +11,7 @@ use App\Category;
 
 class Post extends Model
 {
+    protected $fillable = ['tag_id', 'title', 'body'];
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -51,6 +52,11 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany(\App\Tag::class);
+    }
+    
+    public function addTags()
+    {
+        $this->tags()->create(['name'=>$tag]);
     }
     
     public function categories()
